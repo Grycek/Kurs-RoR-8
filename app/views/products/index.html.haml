@@ -1,0 +1,12 @@
+%h2
+  Produkty
+
+- @products.each do |product|
+  %p
+    %span
+      Nazwa:
+      =product.name
+    %br
+    %span
+      Cena:
+      =product.value

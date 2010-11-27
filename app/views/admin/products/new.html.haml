@@ -1,0 +1,15 @@
+= form_for [:admin,@product] do |f|
+  - if @product.errors.any?
+    %br
+      Errors:
+    %li
+      -@product.errors.full_messages.each do |msg|
+        %ul
+          =msg
+  %p
+    Nazwa:
+    = f.text_field :name
+  %p
+    Cena:
+    = f.text_field :value
+  =f.submit "Dodaj"

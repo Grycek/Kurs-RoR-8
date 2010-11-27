@@ -1,0 +1,14 @@
+%h2
+  Produkty
+
+- @products.each do |product|
+  %p
+    %span
+      Nazwa:
+      =product.name
+    %br
+    %span
+      Cena:
+      =product.value
+      
+= link_to "Dodaj produkt", new_admin_product_path
