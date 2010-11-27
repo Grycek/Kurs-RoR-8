@@ -1,0 +1,13 @@
+=@prodid
+%h3
+  Produkty w koszyku
+
+- @cart.each_with_index do |product, index|
+  %p
+    Nazwa:
+    =product.name
+    %br
+    Cena:
+    =product.value
+    =link_to "Usuń z koszyka", {:controller => "cart" , :action => "delete", :product_number =>  index}
+  

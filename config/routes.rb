@@ -2,7 +2,13 @@ Task8::Application.routes.draw do
   devise_for :users
   
   root :to => "home#index"
-  resources :products
+  match 'cart', :to => 'cart#show'
+  match 'cart/delete', :to => 'cart#delete'
+  resources :products do
+    member do
+      get :index_add_to_cart
+    end
+  end
   namespace :admin do
     resources :products
   end
