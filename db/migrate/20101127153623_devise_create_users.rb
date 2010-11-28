@@ -10,7 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
       # t.token_authenticatable
 
-      t.is_admin :boolean
+      t.boolean :is_admin
       t.timestamps
     end
 
