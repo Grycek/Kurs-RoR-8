@@ -3,7 +3,7 @@ class CreateOrderItems < ActiveRecord::Migration
     create_table :order_items do |t|
       t.string :name
       t.integer :product_id
-      t.column :value, :double
+      t.float :value
 
       t.timestamps
     end

@@ -1,7 +1,7 @@
 class AddNameAndValueToProduct < ActiveRecord::Migration
   def self.up
     add_column :products, :name, :string
-    add_column :products, :value, :double
+    add_column :products, :value, :float
   end
 
   def self.down
