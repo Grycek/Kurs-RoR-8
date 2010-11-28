@@ -1,4 +1,5 @@
 Task8::Application.routes.draw do
+
   devise_for :users
   
   root :to => "home#index"
@@ -9,8 +10,11 @@ Task8::Application.routes.draw do
       get :index_add_to_cart
     end
   end
+  resources :orders
   namespace :admin do
     resources :products
+    resources :orders 
+    root :to => "home#index"
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

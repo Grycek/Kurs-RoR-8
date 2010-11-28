@@ -1,4 +1,3 @@
-=@prodid
 %h3
   Produkty w koszyku
 
@@ -10,4 +9,8 @@
     Cena:
     =product.value
     =link_to "Usuń z koszyka", {:controller => "cart" , :action => "delete", :product_number =>  index}
+
+= link_to "Złóż zamówienie", new_order_path
+%br
+= link_to "Wróć do strony z produktami", products_path
   

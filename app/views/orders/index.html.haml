@@ -1,0 +1,31 @@
+%h2
+  Twoje zamówienia
+  
+- @orders.each_with_index do |order,index|
+  %h3
+    = "Zamówienie #{index+1}"
+  %p
+    Imie: 
+    =order.name
+    %br
+    Nazwisko: 
+    =order.surname
+    %br
+    Adres: 
+    =order.address
+    %br
+    %p
+      Produkty:
+      %br
+      -order.order_items.each do |prod|
+        %p
+          Nazwa:
+          =prod.name
+          %br
+          Cena:
+          =prod.value
+          %br
+
+= link_to "Koszyk", cart_path
+%br
+= link_to "Wróć do strony z produktami", products_path

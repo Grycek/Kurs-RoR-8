@@ -1,0 +1,12 @@
+%h1
+  Zamówienia
+  
+- @users.each do |user|
+  %p
+    Użytkownik: 
+    =user.email
+    %br
+    Zamówienia:
+    %div
+      -user.orders.each do |order|
+        = render :partial => 'shared/order', :locals => {:order => order}

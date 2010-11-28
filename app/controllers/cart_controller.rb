@@ -1,6 +1,5 @@
 class CartController < ApplicationController
-    before_filter :session_cart
-    
+    before_filter :session_cart    
     def show
         @products = @cart
     end

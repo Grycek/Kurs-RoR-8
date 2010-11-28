@@ -1,9 +1,4 @@
--@cart.each do |product|
-  =product.name
-  =product.value
-  %br
-  %br
-  
+ 
 %h2
   Produkty
 
@@ -19,3 +14,5 @@
     = link_to "dodaj do koszyka", index_add_to_cart_product_path(product)
     
 = link_to "Koszyk", cart_path
+%br
+= link_to "Strona główna", root_path

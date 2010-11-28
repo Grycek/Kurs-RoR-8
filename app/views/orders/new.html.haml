@@ -1,0 +1,46 @@
+%h2
+  Złóż zamówienie
+%h3
+  Produkty w koszyku
+
+- @cart.each_with_index do |product, index|
+  %p
+    Nazwa:
+    =product.name
+    %br
+    Cena:
+    =product.value
+%p
+  Łaczny koszt:    
+  = cart_value(@cart)
+
+%p 
+  %br 
+  %b
+    Podaj dane osobowe
+  %p
+    = form_for @order do |f|
+      - if @order.errors.any?
+        %br
+          Errors:
+        %li
+          -@order.errors.full_messages.each do |msg|
+            %ul 
+              =msg
+          
+      Imię:
+      %br
+      = f.text_field :name
+      %br
+      Nazwisko:
+      %br
+      = f.text_field :surname
+      %br
+      Adres:
+      %br
+      = f.text_area :address
+      %br
+      =f.submit "Zamów"
+      
+      
+= link_to "Wróć do strony z produktami", products_path
